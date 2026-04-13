@@ -1,0 +1,55 @@
+name: Discover FTS Search Results
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 5,13,21 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Install Playwright browser
+        run: npx playwright install chromium
+
+      - name: Discover website-like notices from the FTS search UI
+        run: node scripts/discover-fts-search.mjs
+
+      - name: Merge discovered notices into the live feed
+        run: node scripts/refresh-live-data.mjs
+
+      - name: Commit updated discovery data
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          git add data/fts_search_discovery.json data/live_website_opportunities.json LIVE_AUTO_FEED_SUMMARY.md
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "No data changes."
+            exit 0
+          }
+          git commit -m "Refresh FTS search discovery"
+          git push

@@ -1,0 +1,1599 @@
+{
+  "refreshed_at": "2026-04-13T20:56:37.470Z",
+  "source": "FTS search UI via Playwright",
+  "search_terms": [
+    "website",
+    "website redesign",
+    "website development",
+    "web development",
+    "website build",
+    "cms",
+    "intranet",
+    "microsite"
+  ],
+  "max_pages_per_term": 8,
+  "retention_days": 180,
+  "result_count": 77,
+  "errors": [
+    {
+      "term": "website development",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    },
+    {
+      "term": "web development",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    },
+    {
+      "term": "website build",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    },
+    {
+      "term": "cms",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    },
+    {
+      "term": "intranet",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    },
+    {
+      "term": "microsite",
+      "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#keywords, input[name=\\'keywords\\']').first() to be visible\u001b[22m\n"
+    }
+  ],
+  "results": [
+    {
+      "notice_id": "010959-2026",
+      "title": "002628 Website redevelopment, hosting and support of the IDP Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/010959-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "005982-2026",
+      "title": "Accessibility Checker for Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/005982-2026?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "016862-2025",
+      "title": "Aston University Website Redevelopment Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/016862-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "023303-2025",
+      "title": "C1272 BTA2120 Supplier Services for BTA websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/023303-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 5
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "066019-2025",
+      "title": "City Lit College - Website Maintenance and Development of Existing Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/066019-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "000618-2025",
+      "title": "Creation of new website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/000618-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "002954-2026",
+      "title": "DESIGN & BUILD OF A NEW CORPORATE WEBSITE FOR THE CAMBRIDGESHIRE & PETERBOROUGH COMBINED AUTHORITY",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/002954-2026?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 5
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "006476-2026",
+      "title": "Dynamic Purchasing System (DPS) for Website Design and Build Services",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/006476-2026?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "009719-2026",
+      "title": "Enterprising Barnsley and DMC websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/009719-2026?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "026203-2026",
+      "title": "Expression of Interest for Website MSP and potential redesign and development of Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/026203-2026?origin=SearchResults&p=1",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "041793-2025",
+      "title": "GIO0724 - Media (websites) Placements",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/041793-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "012151-2025",
+      "title": "Invitation to Tender (ITT) Website Redevelopment and Monthly Hosting & Maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/012151-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "004705-2025",
+      "title": "Invitation to Tender (ITT) Website Redevelopment and Monthly Hosting & Maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/004705-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "024635-2026",
+      "title": "My Medical Record patient and clinical websites support and licensing",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/024635-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "020642-2025",
+      "title": "P396 - Bi-borough Adult Social Care Information and Advice Website - 'People First'",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/020642-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "005984-2025",
+      "title": "Pre-Procurement market engagement questionnaire for the provision of a Content Management System (CMS) for Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/005984-2025?origin=SearchResults&p=1",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "059346-2025",
+      "title": "Provision for Website Replacement",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/059346-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "062979-2025",
+      "title": "Provision of a merged website and associated social media platform",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/062979-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "002748-2025",
+      "title": "Provision of Community Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/002748-2025?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "063709-2025",
+      "title": "Provision of the ScotRail Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/063709-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "005315-2025",
+      "title": "Provision of the ScotRail Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/005315-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "000301-2025",
+      "title": "Provision of WORDPRESS HOSTING, MAINTENANCE AND SUPPORT (FOR DEFENCE PEOPLE TEAM MICROSITES/EXTERNAL WEBSITES)",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/000301-2025?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "028475-2026",
+      "title": "RBGKEW1507 - Replacement Cookie Consent Banner software for RBG Kew websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/028475-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "004474-2025",
+      "title": "Supply of a Website Redesign, Hosting and Maintenance Provider",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/004474-2025?origin=SearchResults&p=1",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        },
+        {
+          "term": "website redesign",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "084837-2025",
+      "title": "T2714 Upgrade and contract extension of the Content Management System (CMS) for Council Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/084837-2025?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "014762-2026",
+      "title": "T2714 Upgrade and contract extension of the Content Management System (CMS) for Council Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/014762-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "009899-2026",
+      "title": "T2714 Upgrade and contract extension of the Content Management System (CMS) for Council Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/009899-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "050838-2025",
+      "title": "The Provision of a Website Hosting Service",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/050838-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "049703-2025",
+      "title": "THE PROVISION OF A WEBSITE HOSTING SERVICE",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/049703-2025?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "060416-2025",
+      "title": "The Provision of Website Design, Maintenance and Hosting",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/060416-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "002315-2026",
+      "title": "Visit Newquay Website Design and Build",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/002315-2026?origin=SearchResults&p=6",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 6
+        },
+        {
+          "term": "website redesign",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "027162-2026",
+      "title": "Web Content Engagement System for Council Websites",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/027162-2026?origin=SearchResults&p=3",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 3
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "010254-2026",
+      "title": "Website and branding for Diwylliant a Hinsawdd Cymru | Climate and Culture Cymru",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/010254-2026?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "001742-2026",
+      "title": "Website and branding for Diwylliant a Hinsawdd Cymru | Climate and Culture Cymru",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/001742-2026?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 2
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "006521-2025",
+      "title": "Website Design, Build and Support",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/006521-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "029062-2026",
+      "title": "Website design, development and Hosting 2026",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/029062-2026?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "063361-2025",
+      "title": "Website Development Framework Agreement",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/063361-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "058282-2025",
+      "title": "Website Development Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/058282-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "040856-2025",
+      "title": "Website Development, Maintenance and Hosting Framework",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/040856-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "010807-2025",
+      "title": "Website Development, Maintenance and Hosting Framework",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/010807-2025?origin=SearchResults&p=5",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 5
+        },
+        {
+          "term": "website redesign",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "020972-2025",
+      "title": "Website Hosting & Maintenance - 073-2025",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/020972-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "012723-2026",
+      "title": "Website rebuild",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/012723-2026?origin=SearchResults&p=7",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "061588-2025",
+      "title": "Website Redevelopment Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/061588-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "047905-2025",
+      "title": "Website Redevelopment Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/047905-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "017448-2025",
+      "title": "Website Redevelopment Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/017448-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "014063-2025",
+      "title": "Website redevelopment, design and hosting",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/014063-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 1
+        },
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "006003-2026",
+      "title": "Website redevelopment, hosting and support of the IDP Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/006003-2026?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "022728-2025",
+      "title": "Website redevelopment, support and hosting contract",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/022728-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 4
+        },
+        {
+          "term": "website redesign",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "040540-2025",
+      "title": "WFD Website Hosting and Support Services",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/040540-2025?origin=SearchResults&p=4",
+      "search_terms": [
+        "website",
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 3
+        },
+        {
+          "term": "website redesign",
+          "page": 4
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "071511-2025",
+      "title": "002752 - Provision of Food Festival Website, Branding And Social Media Assets",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/071511-2025?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "005623-2025",
+      "title": "2025 - Website Design and Build Services, and Hosting and Maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/005623-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "021051-2026",
+      "title": "26-22 Unified Website Platform, CMS, Hosting, Design and Build",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/021051-2026?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "009944-2026",
+      "title": "Creative, Design and Microsite Services",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/009944-2026?origin=SearchResults&p=1",
+      "search_terms": [
+        "microsite"
+      ],
+      "search_hits": [
+        {
+          "term": "microsite",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:28:17.308Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "004218-2026",
+      "title": "Creative, Design and Microsite Services",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/004218-2026?origin=SearchResults&p=1",
+      "search_terms": [
+        "microsite"
+      ],
+      "search_hits": [
+        {
+          "term": "microsite",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:28:17.308Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "086322-2025",
+      "title": "DDaT25555 - Platform website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/086322-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "003046-2025",
+      "title": "Digital Healthcare Information Website for maternity, children, young people and families",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/003046-2025?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "000900-2025",
+      "title": "ID 5315228 - DfE - InterTradeIreland - Website Development Support and Maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/000900-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "048260-2025",
+      "title": "New Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/048260-2025?origin=SearchResults&p=6",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "023439-2026",
+      "title": "New Website For The Victoria Theatre Halifax",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/023439-2026?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "027864-2026",
+      "title": "NLFT TT Website integration",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/027864-2026?origin=SearchResults&p=1",
+      "search_terms": [
+        "microsite"
+      ],
+      "search_hits": [
+        {
+          "term": "microsite",
+          "page": 1
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:28:17.308Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "028741-2025",
+      "title": "Ongoing WordPress website maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/028741-2025?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "014681-2025",
+      "title": "Redesign of website for PCA",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/014681-2025?origin=SearchResults&p=2",
+      "search_terms": [
+        "website redesign"
+      ],
+      "search_hits": [
+        {
+          "term": "website redesign",
+          "page": 2
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "029343-2026",
+      "title": "Request for Information (RFI): Digital Therapeutic Mobile App and Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/029343-2026?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "014602-2026",
+      "title": "Strategic Digital Partner for Website and Mobile Applications​​",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/014602-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "014600-2026",
+      "title": "Strategic Digital Partner for Website and Mobile Applications​​",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/014600-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "008846-2026",
+      "title": "Strategic Digital Partner for Website and Mobile Applications​​",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/008846-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "008845-2026",
+      "title": "Strategic Digital Partner for Website and Mobile Applications​​",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/008845-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "008660-2026",
+      "title": "Strategic Digital Partner for Website and Mobile Applications​​",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/008660-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "075137-2025",
+      "title": "Timetable Integration for Active Hartlepool Website",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/075137-2025?origin=SearchResults&p=6",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "009997-2026",
+      "title": "Website and Intranet",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/009997-2026?origin=SearchResults&p=6",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "013877-2025",
+      "title": "Website Development Project",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/013877-2025?origin=SearchResults&p=6",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 6
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "031841-2025",
+      "title": "Website Hosting and Development",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/031841-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "047201-2025",
+      "title": "Website Management & Digital Presence Services",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/047201-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "064872-2025",
+      "title": "Website Redevelopment, Hosting & Maintenance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/064872-2025?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "031904-2026",
+      "title": "Website specialist support and quality assurance",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/031904-2026?origin=SearchResults&p=8",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 8
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "016801-2026",
+      "title": "Website Upgrade",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/016801-2026?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    },
+    {
+      "notice_id": "073253-2025",
+      "title": "Website Upgrade",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/073253-2025?origin=SearchResults&p=7",
+      "search_terms": [
+        "website"
+      ],
+      "search_hits": [
+        {
+          "term": "website",
+          "page": 7
+        }
+      ],
+      "first_seen_at": "2026-04-13T20:28:17.308Z",
+      "last_seen_at": "2026-04-13T20:56:37.470Z",
+      "discovery_source": "FTS search UI via Playwright"
+    }
+  ]
+}

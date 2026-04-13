@@ -1,10 +1,13 @@
 {
-  "refreshed_at": "2026-04-14T08:04:16.672Z",
-  "source": "Official FTS OCDS API",
+  "refreshed_at": "2026-04-14T10:04:12.880Z",
+  "source": "Official FTS OCDS API plus persisted FTS search discovery",
   "lookback_days": 180,
   "scanned_notices": 1554,
   "seeded_verified_current": 5,
-  "live_count": 5,
+  "discovery_candidates_loaded": 6,
+  "discovery_candidates_verified": 5,
+  "discovery_candidates_kept": 1,
+  "live_count": 6,
   "results": [
     {
       "title": "New Website For The Victoria Theatre Halifax",
@@ -141,6 +144,30 @@
       "status_reason": "Planning notice with future submission deadline",
       "buyer": "",
       "value_text": ""
+    },
+    {
+      "title": "Request for Information (RFI): Digital Therapeutic Mobile App and Website",
+      "notice_id": "029343-2026",
+      "live_url": "https://www.find-tender.service.gov.uk/Notice/029343-2026?origin=SearchResults&p=7",
+      "status": "current_pre_tender",
+      "status_reason": "Discovered in the FTS search UI and verified against the official notice page. Planning notice with future engagement deadline",
+      "difficulty": 7,
+      "difficulty_label": "MEDIUM-HARD",
+      "published": "30 March 2026, 5:29pm",
+      "tender_submission_deadline": "",
+      "engagement_deadline": "30 April 2026",
+      "estimated_tender_notice": "30 April 2026",
+      "date_signed": "",
+      "supplier": "Feedback Service",
+      "buyer": "",
+      "notice_code": "UK2",
+      "notice_type": "Preliminary market engagement notice - Procurement Act 2023 - view information about notice types",
+      "verification_source": "https://www.find-tender.service.gov.uk/Notice/029343-2026?origin=SearchResults&p=7",
+      "value_text": "",
+      "days_until_deadline": 16,
+      "search_terms": [
+        "website"
+      ]
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "name": "uk-website-tenders-tracker",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "discover:fts": "node scripts/discover-fts-search.mjs",
+    "refresh:live": "node scripts/refresh-live-data.mjs",
+    "refresh:full": "node scripts/discover-fts-search.mjs && node scripts/refresh-live-data.mjs",
+    "serve": "node server.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}
