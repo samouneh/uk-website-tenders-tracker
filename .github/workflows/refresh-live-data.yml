@@ -1,0 +1,41 @@
+name: Refresh Live Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6,14,22 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-live-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh live website opportunities
+        run: node scripts/refresh-live-data.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live_website_opportunities.json LIVE_AUTO_FEED_SUMMARY.md
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -m "Refresh live website opportunities"
+          git push

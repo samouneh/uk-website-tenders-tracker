@@ -18,8 +18,10 @@ const STATUS_PRIORITY = {
 };
 
 const state = {
-  data: [],
-  status: pageMode === "live" ? "all" : "all",
+  archiveData: [],
+  liveData: [],
+  liveMeta: null,
+  status: "all",
   search: "",
   sort: "urgency",
   easyLiveOnly: false,
@@ -42,26 +44,43 @@ const cardTemplate = document.querySelector("#card-template");
 init();
 
 async function init() {
-  const response = await fetch("./data/website_tenders_2026_quality_checked_final.json");
-  const data = await response.json();
-  state.data = data;
+  const [archivePayload, livePayload] = await Promise.all([
+    loadJson("./data/website_tenders_2026_quality_checked_final.json", []),
+    loadJson("./data/live_website_opportunities.json", null),
+  ]);
 
-  buildHero(data);
-  buildSummary(data);
-  buildFilters(data);
+  state.archiveData = Array.isArray(archivePayload) ? archivePayload : [];
+  state.liveData = Array.isArray(livePayload?.results)
+    ? livePayload.results
+    : state.archiveData.filter(isLiveOpportunity);
+  state.liveMeta = livePayload && !Array.isArray(livePayload) ? livePayload : null;
+
+  buildHero();
+  buildSummary();
+  buildFilters();
   bindControls();
   render();
 }
 
-function buildHero(data) {
-  const live = data.filter(isLiveOpportunity);
-  const verifiedDate = "13 April 2026";
+async function loadJson(url, fallback) {
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch {
+    return fallback;
+  }
+}
+
+function buildHero() {
+  const live = state.liveData.filter(isLiveOpportunity);
+  const refreshed = formatRefreshChip(state.liveMeta?.refreshed_at);
 
   heroMeta.innerHTML = [
     chip(`${live.length} live opportunities`),
     chip(`${live.filter(isEasy).length} live and easy`),
-    chip(`${data.filter((item) => item.status === "expired").length} expired`),
-    chip(`verified ${verifiedDate}`),
+    chip(`${state.archiveData.filter((item) => item.status === "awarded_taken").length} archived awards`),
+    chip(refreshed),
   ].join("");
 
   const top = [...live].sort(compareByUrgency)[0];
@@ -80,25 +99,25 @@ function buildHero(data) {
   `;
 }
 
-function buildSummary(data) {
-  const live = data.filter(isLiveOpportunity);
+function buildSummary() {
+  const live = state.liveData.filter(isLiveOpportunity);
   const counts =
     pageMode === "live"
       ? [
-          ["Current tender", countBy(data, "current_tender")],
-          ["Current pre-tender", countBy(data, "current_pre_tender")],
+          ["Current tender", countBy(state.liveData, "current_tender")],
+          ["Current pre-tender", countBy(state.liveData, "current_pre_tender")],
           ["Very easy or easy", live.filter(isEasy).length],
           ["Harder live", live.filter((item) => !isEasy(item)).length],
           ["Total live", live.length],
-          ["Archived elsewhere", data.length - live.length],
+          ["API scanned", Number(state.liveMeta?.scanned_notices || 0)],
         ]
       : [
-          ["Current tender", countBy(data, "current_tender")],
-          ["Current pre-tender", countBy(data, "current_pre_tender")],
+          ["Current tender", countBy(state.liveData, "current_tender")],
+          ["Current pre-tender", countBy(state.liveData, "current_pre_tender")],
           ["Live and easy", live.filter(isEasy).length],
-          ["Future pipeline", countBy(data, "future_pipeline")],
-          ["Expired", countBy(data, "expired")],
-          ["Awarded / not open", countBy(data, "awarded_taken")],
+          ["Future pipeline", countBy(state.archiveData, "future_pipeline")],
+          ["Expired", countBy(state.archiveData, "expired")],
+          ["Awarded / not open", countBy(state.archiveData, "awarded_taken")],
         ];
 
   summaryGrid.innerHTML = counts
@@ -113,19 +132,20 @@ function buildSummary(data) {
     .join("");
 }
 
-function buildFilters(data) {
+function buildFilters() {
+  const filterSource = pageMode === "live" ? state.liveData : state.archiveData;
   const availableStatuses =
     pageMode === "live"
       ? ["all", "current_tender", "current_pre_tender"]
-      : ["all", "current_tender", "current_pre_tender", "future_pipeline", "expired", "awarded_taken"];
+      : ["all", "future_pipeline", "expired", "awarded_taken"];
 
   const counts = {
-    all: pageMode === "live" ? data.filter(isLiveOpportunity).length : data.length,
-    current_tender: countBy(data, "current_tender"),
-    current_pre_tender: countBy(data, "current_pre_tender"),
-    future_pipeline: countBy(data, "future_pipeline"),
-    expired: countBy(data, "expired"),
-    awarded_taken: countBy(data, "awarded_taken"),
+    all: filterSource.length,
+    current_tender: countBy(filterSource, "current_tender"),
+    current_pre_tender: countBy(filterSource, "current_pre_tender"),
+    future_pipeline: countBy(filterSource, "future_pipeline"),
+    expired: countBy(filterSource, "expired"),
+    awarded_taken: countBy(filterSource, "awarded_taken"),
   };
 
   filterBar.innerHTML = availableStatuses
@@ -141,7 +161,7 @@ function buildFilters(data) {
   filterBar.querySelectorAll("[data-status]").forEach((button) => {
     button.addEventListener("click", () => {
       state.status = button.dataset.status;
-      buildFilters(state.data);
+      buildFilters();
       render();
     });
   });
@@ -171,7 +191,7 @@ function bindControls() {
 }
 
 function render() {
-  const live = state.data.filter(isLiveOpportunity).sort(compareByUrgency);
+  const live = state.liveData.filter(isLiveOpportunity).sort(compareByUrgency);
   const shortlist = [...live].sort(compareByEase).slice(0, 6);
   const filtered = getFilteredResults();
 
@@ -182,8 +202,8 @@ function render() {
 }
 
 function getFilteredResults() {
-  return state.data
-    .filter(matchesPageMode)
+  const source = pageMode === "live" ? state.liveData : state.archiveData;
+  return source
     .filter(matchesStatus)
     .filter(matchesSearch)
     .filter(matchesEaseLive)
@@ -193,6 +213,7 @@ function getFilteredResults() {
 function renderCard(item) {
   const node = cardTemplate.content.firstElementChild.cloneNode(true);
   const easeMeta = getEaseMeta(item);
+
   node.querySelector(".status-pill").textContent = STATUS_META[item.status]?.label ?? item.status;
   node.querySelector(".status-pill").classList.add(`status-${item.status}`);
   node.querySelector(".ease-pill").textContent = easeMeta.label;
@@ -203,6 +224,7 @@ function renderCard(item) {
   node.querySelector(".notice-reason").textContent = item.status_reason;
   node.querySelector(".detail-list").innerHTML = buildDetails(item);
   node.querySelector(".card-links").innerHTML = buildLinks(item);
+
   return node.outerHTML;
 }
 
@@ -217,12 +239,13 @@ function buildDetails(item) {
   const rows = [];
   const primaryDate = findPrimaryDate(item);
 
+  if (item.buyer) rows.push(["Buyer", item.buyer]);
   if (primaryDate) rows.push(["Timing", primaryDate]);
   if (item.published) rows.push(["Published", item.published]);
+  if (item.value_text) rows.push(["Value", item.value_text]);
   if (item.date_signed) rows.push(["Date signed", item.date_signed]);
   if (item.supplier) rows.push(["Supplier", item.supplier]);
-  if (item.verification_source) rows.push(["Verified by", "Official notice plus live mirror"]);
-  if (typeof item.difficulty === "number") rows.push(["Ease score", item.difficulty.toFixed(1)]);
+  if (item.verification_source) rows.push(["Source", item.verification_source]);
 
   return rows
     .map(
@@ -239,17 +262,13 @@ function buildLinks(item) {
     `<a href="${item.live_url}" target="_blank" rel="noreferrer">Official notice</a>`,
   ];
 
-  if (item.verification_source && item.verification_source !== item.live_url) {
+  if (item.verification_source && /^https?:/i.test(item.verification_source) && item.verification_source !== item.live_url) {
     links.push(
       `<a href="${item.verification_source}" target="_blank" rel="noreferrer">Verification source</a>`,
     );
   }
 
   return links.join("");
-}
-
-function matchesPageMode(item) {
-  return pageMode === "live" ? isLiveOpportunity(item) : true;
 }
 
 function matchesStatus(item) {
@@ -265,6 +284,7 @@ function matchesSearch(item) {
     item.notice_code,
     item.notice_type,
     item.status_reason,
+    item.buyer,
     item.supplier,
     item.published,
   ]
@@ -284,7 +304,8 @@ function getComparator(sort) {
   if (sort === "ease") return compareByEase;
 
   if (sort === "published") {
-    return (a, b) => compareDates(findPublishedDateObject(b), findPublishedDateObject(a)) || compareByUrgency(a, b);
+    return (a, b) =>
+      compareDates(findPublishedDateObject(b), findPublishedDateObject(a)) || compareByUrgency(a, b);
   }
 
   if (sort === "title") {
@@ -327,7 +348,7 @@ function findPrimaryDateLabel(item) {
 }
 
 function findPrimaryDateObject(item) {
-  return parseDate(
+  return parseDateish(
     item.tender_submission_deadline ||
       item.engagement_deadline ||
       item.estimated_tender_notice ||
@@ -336,12 +357,12 @@ function findPrimaryDateObject(item) {
 }
 
 function findPublishedDateObject(item) {
-  return parseDate(item.published || "");
+  return parseDateish(item.published || "");
 }
 
-function parseDate(value) {
+function parseDateish(value) {
   if (!value) return null;
-  const cleaned = value.replace(/(\d{1,2}:\d{2})(am|pm)/i, "$1 $2").replace(",", "").trim();
+  const cleaned = String(value).replace(/(\d{1,2}:\d{2})(am|pm)/i, "$1 $2").replace(",", "").trim();
   const parsed = new Date(cleaned);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
@@ -373,12 +394,14 @@ function exportCsv(rows) {
     "status",
     "difficulty",
     "difficulty_label",
+    "buyer",
     "published",
     "tender_submission_deadline",
     "engagement_deadline",
     "estimated_tender_notice",
     "date_signed",
     "supplier",
+    "value_text",
     "status_reason",
     "live_url",
     "verification_source",
@@ -402,6 +425,19 @@ function exportCsv(rows) {
 
 function csvCell(value) {
   return `"${String(value).replaceAll('"', '""')}"`;
+}
+
+function formatRefreshChip(value) {
+  if (!value) return "refresh feed unavailable";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "auto refresh enabled";
+  return `auto refreshed ${date.toLocaleString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  })}`;
 }
 
 function chip(text) {
