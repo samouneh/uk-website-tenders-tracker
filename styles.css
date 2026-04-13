@@ -57,6 +57,7 @@ body::before {
   align-items: stretch;
 }
 
+.top-nav,
 .hero-copy,
 .hero-panel,
 .summary-card,
@@ -70,10 +71,36 @@ body::before {
   box-shadow: var(--shadow);
 }
 
+.top-nav,
 .hero-copy,
 .hero-panel,
 .section-block {
   border-radius: 28px;
+}
+
+.top-nav {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.nav-link.active {
+  color: var(--paper-strong);
+  background: var(--ink);
 }
 
 .hero-copy {
@@ -357,6 +384,7 @@ h2 {
 }
 
 .status-pill,
+.ease-pill,
 .difficulty-pill {
   display: inline-flex;
   align-items: center;
@@ -389,9 +417,29 @@ h2 {
   color: var(--rose);
 }
 
-.difficulty-pill {
+.ease-very-easy {
+  background: rgba(15, 118, 110, 0.14);
+  color: #0f766e;
+}
+
+.ease-easy {
   background: rgba(36, 94, 115, 0.12);
   color: var(--blue);
+}
+
+.ease-medium {
+  background: rgba(200, 141, 23, 0.16);
+  color: #7a5700;
+}
+
+.ease-medium-hard {
+  background: rgba(168, 75, 47, 0.14);
+  color: var(--rust);
+}
+
+.difficulty-pill {
+  background: rgba(23, 33, 27, 0.08);
+  color: var(--ink);
 }
 
 .notice-title {
@@ -472,6 +520,7 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .top-nav,
   .hero-copy,
   .hero-panel,
   .section-block {

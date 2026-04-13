@@ -1,3 +1,5 @@
+const pageMode = document.body.dataset.page || "all";
+
 const STATUS_META = {
   all: { label: "All notices" },
   current_tender: { label: "Current tender" },
@@ -17,7 +19,7 @@ const STATUS_PRIORITY = {
 
 const state = {
   data: [],
-  status: "all",
+  status: pageMode === "live" ? "all" : "all",
   search: "",
   sort: "urgency",
   easyLiveOnly: false,
@@ -58,7 +60,7 @@ function buildHero(data) {
   heroMeta.innerHTML = [
     chip(`${live.length} live opportunities`),
     chip(`${live.filter(isEasy).length} live and easy`),
-    chip(`${data.filter((item) => item.status === "awarded_taken").length} already taken`),
+    chip(`${data.filter((item) => item.status === "expired").length} expired`),
     chip(`verified ${verifiedDate}`),
   ].join("");
 
@@ -79,14 +81,25 @@ function buildHero(data) {
 }
 
 function buildSummary(data) {
-  const counts = [
-    ["Current tender", countBy(data, "current_tender")],
-    ["Current pre-tender", countBy(data, "current_pre_tender")],
-    ["Live and easy", data.filter((item) => isLiveOpportunity(item) && isEasy(item)).length],
-    ["Future pipeline", countBy(data, "future_pipeline")],
-    ["Expired", countBy(data, "expired")],
-    ["Awarded / not open", countBy(data, "awarded_taken")],
-  ];
+  const live = data.filter(isLiveOpportunity);
+  const counts =
+    pageMode === "live"
+      ? [
+          ["Current tender", countBy(data, "current_tender")],
+          ["Current pre-tender", countBy(data, "current_pre_tender")],
+          ["Very easy or easy", live.filter(isEasy).length],
+          ["Harder live", live.filter((item) => !isEasy(item)).length],
+          ["Total live", live.length],
+          ["Archived elsewhere", data.length - live.length],
+        ]
+      : [
+          ["Current tender", countBy(data, "current_tender")],
+          ["Current pre-tender", countBy(data, "current_pre_tender")],
+          ["Live and easy", live.filter(isEasy).length],
+          ["Future pipeline", countBy(data, "future_pipeline")],
+          ["Expired", countBy(data, "expired")],
+          ["Awarded / not open", countBy(data, "awarded_taken")],
+        ];
 
   summaryGrid.innerHTML = counts
     .map(
@@ -101,8 +114,13 @@ function buildSummary(data) {
 }
 
 function buildFilters(data) {
+  const availableStatuses =
+    pageMode === "live"
+      ? ["all", "current_tender", "current_pre_tender"]
+      : ["all", "current_tender", "current_pre_tender", "future_pipeline", "expired", "awarded_taken"];
+
   const counts = {
-    all: data.length,
+    all: pageMode === "live" ? data.filter(isLiveOpportunity).length : data.length,
     current_tender: countBy(data, "current_tender"),
     current_pre_tender: countBy(data, "current_pre_tender"),
     future_pipeline: countBy(data, "future_pipeline"),
@@ -110,11 +128,11 @@ function buildFilters(data) {
     awarded_taken: countBy(data, "awarded_taken"),
   };
 
-  filterBar.innerHTML = Object.entries(STATUS_META)
+  filterBar.innerHTML = availableStatuses
     .map(
-      ([value, meta]) => `
+      (value) => `
         <button class="filter-button ${value === state.status ? "active" : ""}" data-status="${value}">
-          ${meta.label} <strong>${counts[value]}</strong>
+          ${STATUS_META[value].label} <strong>${counts[value]}</strong>
         </button>
       `,
     )
@@ -157,14 +175,15 @@ function render() {
   const shortlist = [...live].sort(compareByEase).slice(0, 6);
   const filtered = getFilteredResults();
 
-  liveGrid.innerHTML = live.map(renderCard).join("");
-  shortlistGrid.innerHTML = shortlist.map(renderCard).join("");
-  resultsGrid.innerHTML = filtered.map(renderCard).join("");
-  emptyState.classList.toggle("hidden", filtered.length > 0);
+  if (liveGrid) liveGrid.innerHTML = live.map(renderCard).join("");
+  if (shortlistGrid) shortlistGrid.innerHTML = shortlist.map(renderCard).join("");
+  if (resultsGrid) resultsGrid.innerHTML = filtered.map(renderCard).join("");
+  if (emptyState) emptyState.classList.toggle("hidden", filtered.length > 0);
 }
 
 function getFilteredResults() {
   return state.data
+    .filter(matchesPageMode)
     .filter(matchesStatus)
     .filter(matchesSearch)
     .filter(matchesEaseLive)
@@ -173,9 +192,12 @@ function getFilteredResults() {
 
 function renderCard(item) {
   const node = cardTemplate.content.firstElementChild.cloneNode(true);
+  const easeMeta = getEaseMeta(item);
   node.querySelector(".status-pill").textContent = STATUS_META[item.status]?.label ?? item.status;
   node.querySelector(".status-pill").classList.add(`status-${item.status}`);
-  node.querySelector(".difficulty-pill").textContent = simplifyDifficulty(item.difficulty_label);
+  node.querySelector(".ease-pill").textContent = easeMeta.label;
+  node.querySelector(".ease-pill").classList.add(easeMeta.className);
+  node.querySelector(".difficulty-pill").textContent = `score ${Number(item.difficulty ?? 0).toFixed(1)}`;
   node.querySelector(".notice-title").textContent = item.title;
   node.querySelector(".notice-meta").textContent = buildMeta(item);
   node.querySelector(".notice-reason").textContent = item.status_reason;
@@ -224,6 +246,10 @@ function buildLinks(item) {
   }
 
   return links.join("");
+}
+
+function matchesPageMode(item) {
+  return pageMode === "live" ? isLiveOpportunity(item) : true;
 }
 
 function matchesStatus(item) {
@@ -320,8 +346,12 @@ function parseDate(value) {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
 
-function simplifyDifficulty(label) {
-  return String(label || "").replace(/[^\x20-\x7E]/g, "").trim();
+function getEaseMeta(item) {
+  const score = Number(item.difficulty ?? 99);
+  if (score <= 2) return { label: "Very easy", className: "ease-very-easy" };
+  if (score <= 3.5) return { label: "Easy", className: "ease-easy" };
+  if (score <= 5.5) return { label: "Medium", className: "ease-medium" };
+  return { label: "Medium-hard", className: "ease-medium-hard" };
 }
 
 function isLiveOpportunity(item) {
