@@ -183,7 +183,8 @@ h2 {
 }
 
 .focus-link:hover,
-.card-links a:hover {
+.card-links a:hover,
+.detail-link:hover {
   text-decoration: underline;
 }
 
@@ -215,7 +216,7 @@ h2 {
 .controls {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 180px 220px;
   gap: 14px;
   padding: 16px;
   border-radius: 22px;
@@ -243,6 +244,33 @@ h2 {
 .controls select:focus {
   outline: 2px solid rgba(47, 93, 80, 0.3);
   outline-offset: 2px;
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+  align-content: end;
+}
+
+.action-button {
+  border: 1px solid rgba(23, 33, 27, 0.12);
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: var(--paper-strong);
+  font: inherit;
+  font-weight: 700;
+  background: var(--olive);
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, opacity 180ms ease;
+}
+
+.action-button.secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
 }
 
 .filter-bar {
@@ -275,6 +303,12 @@ h2 {
 .section-block {
   margin-top: 22px;
   padding: 24px;
+}
+
+.accent-block {
+  background:
+    linear-gradient(135deg, rgba(47, 93, 80, 0.09), rgba(200, 141, 23, 0.08)),
+    var(--card);
 }
 
 .section-header {
@@ -386,6 +420,7 @@ h2 {
   margin: 0;
 }
 
+.detail-link,
 .card-links a {
   color: var(--ink);
   font-weight: 700;
@@ -403,7 +438,6 @@ h2 {
 
 @media (max-width: 1024px) {
   .hero,
-  .summary-grid,
   .card-grid,
   .card-grid.dense {
     grid-template-columns: 1fr 1fr;
@@ -411,6 +445,15 @@ h2 {
 
   .summary-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .controls {
+    grid-template-columns: 1fr 180px;
+  }
+
+  .actions {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -424,7 +467,8 @@ h2 {
   .summary-grid,
   .controls,
   .card-grid,
-  .card-grid.dense {
+  .card-grid.dense,
+  .actions {
     grid-template-columns: 1fr;
   }
 

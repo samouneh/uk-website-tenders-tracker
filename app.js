@@ -20,24 +20,22 @@ const state = {
   status: "all",
   search: "",
   sort: "urgency",
+  easyLiveOnly: false,
 };
 
 const summaryGrid = document.querySelector("#summary-grid");
 const filterBar = document.querySelector("#filter-bar");
 const resultsGrid = document.querySelector("#results-grid");
 const liveGrid = document.querySelector("#live-grid");
+const shortlistGrid = document.querySelector("#shortlist-grid");
 const emptyState = document.querySelector("#empty-state");
 const heroMeta = document.querySelector("#hero-meta");
 const topFocus = document.querySelector("#top-focus");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
+const easyLiveButton = document.querySelector("#easy-live-button");
+const exportButton = document.querySelector("#export-button");
 const cardTemplate = document.querySelector("#card-template");
-
-const fmtDate = new Intl.DateTimeFormat("en-GB", {
-  day: "numeric",
-  month: "short",
-  year: "numeric",
-});
 
 init();
 
@@ -54,21 +52,19 @@ async function init() {
 }
 
 function buildHero(data) {
-  const live = data.filter(
-    (item) => item.status === "current_tender" || item.status === "current_pre_tender",
-  );
+  const live = data.filter(isLiveOpportunity);
   const verifiedDate = "13 April 2026";
 
   heroMeta.innerHTML = [
     chip(`${live.length} live opportunities`),
+    chip(`${live.filter(isEasy).length} live and easy`),
     chip(`${data.filter((item) => item.status === "awarded_taken").length} already taken`),
-    chip(`${data.filter((item) => item.status === "expired").length} expired`),
     chip(`verified ${verifiedDate}`),
   ].join("");
 
   const top = [...live].sort(compareByUrgency)[0];
   if (!top) {
-    topFocus.innerHTML = `<p>No live notices available in the current dataset.</p>`;
+    topFocus.innerHTML = "<p>No live notices available in the current dataset.</p>";
     return;
   }
 
@@ -86,10 +82,10 @@ function buildSummary(data) {
   const counts = [
     ["Current tender", countBy(data, "current_tender")],
     ["Current pre-tender", countBy(data, "current_pre_tender")],
+    ["Live and easy", data.filter((item) => isLiveOpportunity(item) && isEasy(item)).length],
     ["Future pipeline", countBy(data, "future_pipeline")],
     ["Expired", countBy(data, "expired")],
     ["Awarded / not open", countBy(data, "awarded_taken")],
-    ["Total checked", data.length],
   ];
 
   summaryGrid.innerHTML = counts
@@ -143,22 +139,36 @@ function bindControls() {
     state.sort = event.target.value;
     render();
   });
+
+  easyLiveButton.addEventListener("click", () => {
+    state.easyLiveOnly = !state.easyLiveOnly;
+    easyLiveButton.classList.toggle("secondary", !state.easyLiveOnly);
+    easyLiveButton.textContent = state.easyLiveOnly ? "Showing easy live only" : "Easy live only";
+    render();
+  });
+
+  exportButton.addEventListener("click", () => {
+    exportCsv(getFilteredResults());
+  });
 }
 
 function render() {
-  const live = state.data
-    .filter((item) => item.status === "current_tender" || item.status === "current_pre_tender")
-    .sort(compareByUrgency);
+  const live = state.data.filter(isLiveOpportunity).sort(compareByUrgency);
+  const shortlist = [...live].sort(compareByEase).slice(0, 6);
+  const filtered = getFilteredResults();
 
   liveGrid.innerHTML = live.map(renderCard).join("");
-
-  const filtered = state.data
-    .filter(matchesStatus)
-    .filter(matchesSearch)
-    .sort(getComparator(state.sort));
-
+  shortlistGrid.innerHTML = shortlist.map(renderCard).join("");
   resultsGrid.innerHTML = filtered.map(renderCard).join("");
   emptyState.classList.toggle("hidden", filtered.length > 0);
+}
+
+function getFilteredResults() {
+  return state.data
+    .filter(matchesStatus)
+    .filter(matchesSearch)
+    .filter(matchesEaseLive)
+    .sort(getComparator(state.sort));
 }
 
 function renderCard(item) {
@@ -178,21 +188,19 @@ function buildMeta(item) {
   const bits = [item.notice_id];
   if (item.notice_code) bits.push(item.notice_code);
   if (item.notice_type) bits.push(item.notice_type);
-  return bits.join(" • ");
+  return bits.join(" | ");
 }
 
 function buildDetails(item) {
   const rows = [];
   const primaryDate = findPrimaryDate(item);
-  if (primaryDate) {
-    rows.push(["Timing", primaryDate]);
-  }
-  if (item.verification_source) {
-    rows.push(["Verified by", "Official notice + live mirror"]);
-  }
-  if (typeof item.difficulty === "number") {
-    rows.push(["Ease score", item.difficulty.toFixed(1)]);
-  }
+
+  if (primaryDate) rows.push(["Timing", primaryDate]);
+  if (item.published) rows.push(["Published", item.published]);
+  if (item.date_signed) rows.push(["Date signed", item.date_signed]);
+  if (item.supplier) rows.push(["Supplier", item.supplier]);
+  if (item.verification_source) rows.push(["Verified by", "Official notice plus live mirror"]);
+  if (typeof item.difficulty === "number") rows.push(["Ease score", item.difficulty.toFixed(1)]);
 
   return rows
     .map(
@@ -224,22 +232,33 @@ function matchesStatus(item) {
 
 function matchesSearch(item) {
   if (!state.search) return true;
+
   const haystack = [
     item.title,
     item.notice_id,
     item.notice_code,
     item.notice_type,
     item.status_reason,
+    item.supplier,
+    item.published,
   ]
     .filter(Boolean)
     .join(" ")
     .toLowerCase();
+
   return haystack.includes(state.search);
 }
 
+function matchesEaseLive(item) {
+  if (!state.easyLiveOnly) return true;
+  return isLiveOpportunity(item) && isEasy(item);
+}
+
 function getComparator(sort) {
-  if (sort === "ease") {
-    return (a, b) => (a.difficulty ?? 99) - (b.difficulty ?? 99) || compareByUrgency(a, b);
+  if (sort === "ease") return compareByEase;
+
+  if (sort === "published") {
+    return (a, b) => compareDates(findPublishedDateObject(b), findPublishedDateObject(a)) || compareByUrgency(a, b);
   }
 
   if (sort === "title") {
@@ -256,6 +275,10 @@ function compareByUrgency(a, b) {
   const dateGap = compareDates(findPrimaryDateObject(a), findPrimaryDateObject(b));
   if (dateGap !== 0) return dateGap;
 
+  return compareByEase(a, b);
+}
+
+function compareByEase(a, b) {
   return (a.difficulty ?? 99) - (b.difficulty ?? 99) || a.title.localeCompare(b.title);
 }
 
@@ -274,37 +297,81 @@ function findPrimaryDate(item) {
 }
 
 function findPrimaryDateLabel(item) {
-  const date = findPrimaryDate(item);
-  return date || "No date listed";
+  return findPrimaryDate(item) || "No date listed";
 }
 
 function findPrimaryDateObject(item) {
-  const source =
+  return parseDate(
     item.tender_submission_deadline ||
-    item.engagement_deadline ||
-    item.estimated_tender_notice ||
-    "";
-  return parseDate(source);
+      item.engagement_deadline ||
+      item.estimated_tender_notice ||
+      "",
+  );
+}
+
+function findPublishedDateObject(item) {
+  return parseDate(item.published || "");
 }
 
 function parseDate(value) {
   if (!value) return null;
-  const cleaned = value
-    .replace(/(\d{1,2}:\d{2})(am|pm)/i, "$1 $2")
-    .replace(",", "")
-    .trim();
-  const date = new Date(cleaned);
-  return Number.isNaN(date.getTime()) ? null : date;
+  const cleaned = value.replace(/(\d{1,2}:\d{2})(am|pm)/i, "$1 $2").replace(",", "").trim();
+  const parsed = new Date(cleaned);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
 
 function simplifyDifficulty(label) {
-  return String(label || "")
-    .replace(/[^\x20-\x7E]/g, "")
-    .trim();
+  return String(label || "").replace(/[^\x20-\x7E]/g, "").trim();
+}
+
+function isLiveOpportunity(item) {
+  return item.status === "current_tender" || item.status === "current_pre_tender";
+}
+
+function isEasy(item) {
+  return Number(item.difficulty ?? 99) <= 3.5;
 }
 
 function countBy(data, status) {
   return data.filter((item) => item.status === status).length;
+}
+
+function exportCsv(rows) {
+  const header = [
+    "title",
+    "notice_id",
+    "status",
+    "difficulty",
+    "difficulty_label",
+    "published",
+    "tender_submission_deadline",
+    "engagement_deadline",
+    "estimated_tender_notice",
+    "date_signed",
+    "supplier",
+    "status_reason",
+    "live_url",
+    "verification_source",
+  ];
+
+  const csv = [
+    header.join(","),
+    ...rows.map((row) => header.map((key) => csvCell(row[key] ?? "")).join(",")),
+  ].join("\n");
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = state.easyLiveOnly ? "website-tenders-easy-live.csv" : "website-tenders-filtered.csv";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function csvCell(value) {
+  return `"${String(value).replaceAll('"', '""')}"`;
 }
 
 function chip(text) {

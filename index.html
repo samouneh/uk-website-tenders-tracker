@@ -41,7 +41,11 @@
         <section class="controls">
           <label class="search">
             <span>Search</span>
-            <input id="search-input" type="search" placeholder="Title, notice ID, buyer, reason..." />
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Title, notice ID, supplier, reason..."
+            />
           </label>
 
           <label class="sort">
@@ -49,12 +53,35 @@
             <select id="sort-select">
               <option value="urgency">Urgency</option>
               <option value="ease">Ease</option>
+              <option value="published">Published</option>
               <option value="title">Title</option>
             </select>
           </label>
+
+          <div class="actions">
+            <button class="action-button secondary" id="easy-live-button" type="button">
+              Easy live only
+            </button>
+            <button class="action-button secondary" id="export-button" type="button">
+              Export CSV
+            </button>
+          </div>
         </section>
 
         <section class="filter-bar" id="filter-bar" aria-label="Status filters"></section>
+
+        <section class="section-block accent-block">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Shortlist</p>
+              <h2>Lowest-friction live work</h2>
+            </div>
+            <p class="section-note">
+              Current tender and pre-tender notices ranked by lowest difficulty first.
+            </p>
+          </div>
+          <div class="card-grid" id="shortlist-grid"></div>
+        </section>
 
         <section class="section-block" id="live-block">
           <div class="section-header">
