@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UK Website Tenders Tracker</title>
+    <meta
+      name="description"
+      content="Quality-checked 2026 UK website tender tracker with live opportunities, expired notices, and awarded contracts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FTS Website Tender Monitor</p>
+          <h1>Cleaned, verified, and split into what is actually bid-worthy.</h1>
+          <p class="lede">
+            This dashboard uses the quality-checked 2026 website tender seed and
+            separates current tenders, pre-tender notices, expired notices, and
+            awards that were already taken.
+          </p>
+          <div class="hero-meta" id="hero-meta"></div>
+        </div>
+        <aside class="hero-panel" id="hero-panel">
+          <p class="panel-label">Current focus</p>
+          <div id="top-focus"></div>
+        </aside>
+      </header>
+
+      <main>
+        <section class="summary-grid" id="summary-grid" aria-label="Summary counts"></section>
+
+        <section class="controls">
+          <label class="search">
+            <span>Search</span>
+            <input id="search-input" type="search" placeholder="Title, notice ID, buyer, reason..." />
+          </label>
+
+          <label class="sort">
+            <span>Sort</span>
+            <select id="sort-select">
+              <option value="urgency">Urgency</option>
+              <option value="ease">Ease</option>
+              <option value="title">Title</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="filter-bar" id="filter-bar" aria-label="Status filters"></section>
+
+        <section class="section-block" id="live-block">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Priority</p>
+              <h2>Live and usable now</h2>
+            </div>
+            <p class="section-note">
+              Current tenders and current pre-tender notices, sorted by urgency.
+            </p>
+          </div>
+          <div class="card-grid" id="live-grid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">All notices</p>
+              <h2>Full quality-checked list</h2>
+            </div>
+            <p class="section-note">
+              Filter the verified 2026 website notice seed without mixing live work
+              into expired or awarded notices.
+            </p>
+          </div>
+          <div class="card-grid dense" id="results-grid"></div>
+          <p class="empty-state hidden" id="empty-state">No notices match the current filter.</p>
+        </section>
+      </main>
+    </div>
+
+    <template id="card-template">
+      <article class="notice-card">
+        <div class="card-topline">
+          <span class="status-pill"></span>
+          <span class="difficulty-pill"></span>
+        </div>
+        <h3 class="notice-title"></h3>
+        <p class="notice-meta"></p>
+        <p class="notice-reason"></p>
+        <dl class="detail-list"></dl>
+        <div class="card-links"></div>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
