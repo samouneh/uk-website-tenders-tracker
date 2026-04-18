@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-04-16T15:03:50.182Z",
+  "refreshed_at": "2026-04-18T15:14:24.780Z",
   "source": "Official FTS OCDS API plus persisted FTS search discovery",
   "lookback_days": 180,
-  "scanned_notices": 1566,
+  "scanned_notices": 1575,
   "seeded_verified_current": 5,
   "discovery_candidates_loaded": 6,
   "discovery_candidates_verified": 5,
@@ -164,7 +164,7 @@
       "notice_type": "Preliminary market engagement notice - Procurement Act 2023 - view information about notice types",
       "verification_source": "https://www.find-tender.service.gov.uk/Notice/029343-2026?origin=SearchResults&p=7",
       "value_text": "",
-      "days_until_deadline": 14,
+      "days_until_deadline": 12,
       "search_terms": [
         "website"
       ]
